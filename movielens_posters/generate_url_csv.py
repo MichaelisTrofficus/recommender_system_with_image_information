@@ -13,20 +13,3 @@ if GENERATE_POSTER_URL_CSV:
                                                 output_csv_path="./item_poster_url.csv")
 
     print("Ids with errors: ", error_ids)
-
-# import csv
-# import urllib
-# from bs4 import BeautifulSoup
-#
-#
-# with open("./item_imdb_url.csv", "r", newline="") as in_csv:
-#     reader = csv.DictReader(in_csv, fieldnames=["item_id", "item_url"])
-#     for row in reader:
-#         item_id, item_url = row['item_id'], row['item_url']
-#         print(item_id, item_url)
-#         with urllib.request.urlopen(item_url) as response:
-#             html = response.read()
-#             soup = BeautifulSoup(html, "html.parser")
-#             image_url = soup.find('div', class_='poster')
-#             image_url = "".join(image_url.partition("_")[0]) + ".jpg"
-#             print(image_url)
