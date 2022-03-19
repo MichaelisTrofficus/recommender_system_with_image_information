@@ -153,3 +153,5 @@ fabric.properties
 ml-100k/
 .DS_Store
 posters/
+movielens_posters/embeddings_generation/
+data/

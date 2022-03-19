@@ -46,13 +46,15 @@ def generate_item_to_imdb_url_csv(ml100k_path: str, imdb_domain: str, output_csv
     return error_urls
 
 
-def generate_item_to_poster_url_csv(item_imdb_url_path: str, output_csv_path: str) -> List[str]:
+def generate_item_to_poster_url_csv(item_imdb_url_path: str, output_csv_path: str,
+                                    item_list: List[str]=None) -> List[str]:
     """
     Generates a csv containing item id and poster url correspondence. It also saves all images
     into posters/ folder.
     Args:
         item_imdb_url_path: The path fot the IMDB url to id csv
         output_csv_path: The output path
+        item_list: A list of items to download
 
     Returns:
         A list of ids the method couldn't get the poster url for
@@ -64,6 +66,11 @@ def generate_item_to_poster_url_csv(item_imdb_url_path: str, output_csv_path: st
         reader = csv.DictReader(in_csv, fieldnames=["item_id", "item_url"])
         for row in tqdm(reader, total=1682):
             item_id, item_url = row['item_id'], row['item_url']
+
+            if item_list:
+                if item_id not in item_list:
+                    continue
+
             with urllib.request.urlopen(item_url) as response:
                 try:
                     html = response.read()
