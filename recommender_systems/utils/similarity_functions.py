@@ -33,7 +33,7 @@ def pearson_correlation(u: np.ndarray, v: np.ndarray):
     v_mean = np.nanmean(v)
 
     mean_deviation = (u - u_mean) * (v - v_mean)
-    num = np.sum(mean_deviation)
+    num = np.nansum(mean_deviation)
 
     # We can get the common elements from mean_deviation
     common_indices = np.argwhere(~ np.isnan(mean_deviation))

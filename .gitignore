@@ -155,3 +155,4 @@ ml-100k/
 posters/
 movielens_posters/embeddings_generation/
 data/
+sim_matrices/

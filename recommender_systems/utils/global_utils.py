@@ -10,5 +10,5 @@ def generate_ratings_matrix(data_rows: np.ndarray):
     r = np.zeros((943, 1682))
     r[:] = np.nan
     for i in data_rows:
-        r[i[0] - 1][i[1] - 1] = i[2]
+        r[int(i[0]) - 1][int(i[1]) - 1] = float(i[2])
     return r
