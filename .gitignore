@@ -152,6 +152,6 @@ fabric.properties
 
 ml-100k/
 .DS_Store
-posters_scrapping_code/embeddings_generation/
+utils/embeddings_generation/
 data/
 sim_matrices/
