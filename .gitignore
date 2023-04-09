@@ -153,5 +153,4 @@ fabric.properties
 ml-100k/
 .DS_Store
 utils/embeddings_generation/
-data/
 sim_matrices/
